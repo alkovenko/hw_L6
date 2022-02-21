@@ -1,12 +1,9 @@
-def concat(*args, reversed=False):
+def concat(*args: str, reversed: bool = False):
     my_string = ''
-    if reversed == False:
-        for word in args:
-            my_string += str(word)
-        return my_string
-    else:
+    if reversed:
         for word in args[::-1]:
-            my_string += str(word)
-        return my_string
-
-print(concat('Hello', ' ', 'world', reversed=True))
+            my_string += word
+    else:
+        for word in args:
+            my_string += word
+    return my_string
